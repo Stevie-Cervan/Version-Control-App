@@ -14,6 +14,7 @@ export default class App extends Component {
     }
 
     handleHomePagePress = () => this.setState(state => ({
+       homePage: 'none',
        versionControlPage: 'block',
        repositoryPage: 'none',
        commitPage: 'none',
@@ -22,6 +23,7 @@ export default class App extends Component {
     }));
     
     handleRepositoryPagePress = () => this.setState(state => ({
+       homePage: 'none',
        versionControlPage: 'none',
        repositoryPage: 'block',
        commitPage: 'none',
@@ -30,6 +32,7 @@ export default class App extends Component {
     }));
     
     handleCommitPagePress = () => this.setState(state => ({
+       homePage: 'none',
        versionControlPage: 'none',
        repositoryPage: 'none',
        commitPage: 'block',
@@ -38,6 +41,7 @@ export default class App extends Component {
     }));
     
     handleBranchPagePress = () => this.setState(state => ({
+       homePage: 'none',
        versionControlPage: 'none',
        repositoryPage: 'none',
        commitPage: 'none',
@@ -46,6 +50,7 @@ export default class App extends Component {
     }));
     
     handlePullRequestPagePress = () => this.setState(state => ({
+       homePage: 'none',
        versionControlPage: 'none',
        repositoryPage: 'none',
        commitPage: 'none',
