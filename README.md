@@ -1,5 +1,5 @@
 # Version-Control-App
-My code for the Version Control App I made in CodeHS. Was in made react native and with the CodeHS syntax.
+My code for the Version Control App I made in CodeHS. Was made in react native and with the CodeHS.
 
 Link to project: https://codehs.com/sandbox/steviecervan/versioncontrolapp
 
