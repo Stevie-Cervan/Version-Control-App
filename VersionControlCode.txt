@@ -1,0 +1,318 @@
+import React, { Component } from 'react';
+import { AppRegistry, Text, View, StyleSheet, TouchableHighlight } from 'react-native';
+import Constants from 'expo-constants';
+
+export default class App extends Component {
+   
+   state = {
+       homePage: 'block',
+       versionControlPage: 'none',
+       repositoryPage: 'none',
+       commitPage: 'none',
+       branchPage: 'none',
+       pullRequestPage: 'none',
+    }
+
+    handleHomePagePress = () => this.setState(state => ({
+       versionControlPage: 'block',
+       repositoryPage: 'none',
+       commitPage: 'none',
+       branchPage: 'none',
+       pullRequestPage: 'none',
+    }));
+    
+    handleRepositoryPagePress = () => this.setState(state => ({
+       versionControlPage: 'none',
+       repositoryPage: 'block',
+       commitPage: 'none',
+       branchPage: 'none',
+       pullRequestPage: 'none',
+    }));
+    
+    handleCommitPagePress = () => this.setState(state => ({
+       versionControlPage: 'none',
+       repositoryPage: 'none',
+       commitPage: 'block',
+       branchPage: 'none',
+       pullRequestPage: 'none',
+    }));
+    
+    handleBranchPagePress = () => this.setState(state => ({
+       versionControlPage: 'none',
+       repositoryPage: 'none',
+       commitPage: 'none',
+       branchPage: 'block',
+       pullRequestPage: 'none',
+    }));
+    
+    handlePullRequestPagePress = () => this.setState(state => ({
+       versionControlPage: 'none',
+       repositoryPage: 'none',
+       commitPage: 'none',
+       branchPage: 'none',
+       pullRequestPage: 'block',
+    }));
+    
+    render() {
+        return (
+            <View style={styles.container}>
+                <View style={styles.titleBox}>
+                    <Text style={styles.title}>
+                        Version Control
+                    </Text>
+                </View>
+                
+                <View style={styles.displayInformation}>
+                    
+                    {/*HOME PAGE*/}
+                    <View style={{ display: this.state.homePage }}>
+                        <View style={styles.versionControl}>
+                            <View style={styles.header}>
+                                Welcome!
+                            </View>
+                            <View style={styles.vsWhat}>
+                                <Text style={styles.insideText}>
+                                    Get started by clicking the navigation
+                                    bar at the bottom to explore what version
+                                    control is and different components that 
+                                    come along with it!
+                                </Text>
+                            </View>
+                        </View>
+                    </View>
+                    
+                    {/*VERSION CONTROL PAGE*/}
+                    <View style={{ display: this.state.versionControlPage }}>
+                        <View style={styles.versionControl}>
+                            <View style={styles.header}>
+                                What is Version Control?
+                            </View>
+                            <View style={styles.vsWhat}>
+                                <Text style={styles.insideText}>
+                                    Version control is the sytem that developers
+                                    use to document the changes that were made
+                                    to a computer program, document, website, or information.
+                                    Useful for keeping track of different 
+                                    versions and being able to recall them. 
+                                    There are many components that are used to 
+                                    achieve organization when keeping track of 
+                                    your archieves, such as the repository, commits,
+                                    branches and pull requests.
+                                </Text>
+                            </View>
+                        </View>
+                    </View>
+                    
+                    {/*REPOSITORY PAGE*/}
+                    <View style={{ display: this.state.repositoryPage }}>
+                        <View style={styles.versionControl}>
+                            <View style={styles.header}>
+                                Repository
+                            </View>
+                            <View style={styles.vsWhat}>
+                                <Text style={styles.insideText}>
+                                    A respiratory is a main file storage location. 
+                                    It also allows for others to access what is inside 
+                                    the repository. For example, when working on 
+                                    GitHub, you might notice that there are files 
+                                    within certain projects, those are known to be 
+                                    repositories. You can also download a repository 
+                                    and use it yourself.
+                                </Text>
+                            </View>
+                        </View>
+                    </View>
+                    
+                    {/*COMMIT PAGE*/}
+                    <View style={{ display: this.state.commitPage }}>
+                        <View style={styles.versionControl}>
+                            <View style={styles.header}>
+                                Commit
+                            </View>
+                            <View style={styles.vsWhat}>
+                                <Text style={styles.insideText}>
+                                    A commit is kind of like a timestamp. Well, that is
+                                    exactly what it is. Any changes that are made to code
+                                    will be sent to the repository and are used for revision.
+                                    The command to make a commit is: git commit
+                                </Text>
+                            </View>
+                        </View>
+                    </View>
+                    
+                    {/*BRANCH PAGE*/}
+                    <View style={{ display: this.state.branchPage }}>
+                        <View style={styles.versionControl}>
+                            <View style={styles.header}>
+                                Branch
+                            </View>
+                            <View style={styles.vsWhat}>
+                                <Text style={styles.insideText}>
+                                   A branch is a duplication of a project under the
+                                   source code. It is to ensure that there are
+                                   parallel modifications that are made throughout
+                                   future branches. The command to create a 
+                                   branch is: git branch nameOfProject.
+                                </Text>
+                            </View>
+                        </View>
+                    </View>
+                    
+                    {/*PULL REQUEST PAGE*/}
+                    <View style={{ display: this.state.pullRequestPage }}>
+                        <View style={styles.versionControl}>
+                            <View style={styles.header}>
+                                Pull Request
+                            </View>
+                            <View style={styles.vsWhat}>
+                                <Text style={styles.insideText}>
+                                   A Pull request is when you make changes to
+                                   code and then submit those changes to the project
+                                   maintainer for a review before those changes are
+                                   implemented or merged. In other words, A pull
+                                   request is requesting that someone reviews and
+                                   approves your changes before they become final.
+                                   Comments, discussion, and feedback are usually
+                                   done here.
+                                </Text>
+                            </View>
+                        </View>
+                    </View>
+                    
+                    
+                    {/*NAVIGATION BOX*/}
+                    <View style={styles.buttonBox}>
+                        
+                        <TouchableHighlight
+                            onPress = {this.handleHomePagePress}
+                        >
+                            <View style={styles.numButton}>
+                                <Text style={styles.button}>
+                                    1
+                                </Text>
+                            </View>
+                        </TouchableHighlight>
+                        
+                        <TouchableHighlight
+                            onPress={this.handleRepositoryPagePress}
+                        >
+                             <View style={styles.numButton}>
+                                <Text style={styles.button}>
+                                    2
+                                </Text>
+                            </View>
+                        </TouchableHighlight>
+                        
+                        <TouchableHighlight
+                            onPress={this.handleCommitPagePress}
+                        >
+                            <View style={styles.numButton}>
+                                <Text style={styles.button}>
+                                    3
+                                </Text>
+                            </View>
+                        </TouchableHighlight>
+                        
+                        <TouchableHighlight
+                            onPress={this.handleBranchPagePress}
+                        >
+                            <View style={styles.numButton}>
+                                <Text style={styles.button}>
+                                    4
+                                </Text>
+                            </View>
+                        </TouchableHighlight>
+                        
+                        <TouchableHighlight
+                            onPress={this.handlePullRequestPagePress}
+                        >
+                            <View style={styles.numButton}>
+                                <Text style={styles.button}>
+                                    5
+                                </Text>
+                            </View>
+                        </TouchableHighlight>
+                    </View>
+                
+                </View>
+            </View>
+        );
+    }
+}
+
+const styles = StyleSheet.create({
+    button: {
+        font: 10,
+        textAlign: 'center',
+        color: '#575761',
+    },
+    numButton: {
+        width: 25,
+        height: 25,
+        backgroundColor: '#8ACB88',
+        borderWidth: 3,
+        borderRadius: 30,
+        borderColor: "#648381",
+        justifyContent: 'center',
+        alignItems: 'center',
+        margin: 10,
+    },
+    buttonBox: {
+        flexDirection: 'row',
+        height: 30,
+        width: 240,
+        backgroundColor: '#FFBF46',
+        justifyContent: 'center',
+        alignItems: 'center',
+        marginTop: 20,
+    },
+    titleBox: {
+        height: 60,
+        backgroundColor: '#FFBF46',
+        justifyContent: 'center',
+        alignItems: 'center',
+    },
+    header: {
+        justifyContent: 'center',
+        alignItems: 'left',
+        color: '#575761',
+        marginLeft: 15,
+        marginRight: 15,
+        marginBottom: 10,
+        fontWeight: 'bold',
+        backgroundColor: '#8ACB88',
+        height: 50,
+        width: 140,
+        textAlign: 'center',
+        borderWidth: 5,
+        borderRadius: 25,
+        borderColor: '#648381',
+        fontSize: 15,
+    },
+    title: {
+        fontSize: 25,
+        color: '#575761',
+        fontWeight: 'bold',
+    },
+    versionControl: {
+        justifyContent: 'center',
+        alignItems: 'center',
+    },
+    displayInformation: {
+        height: 350,
+        backgroundColor: '#575761',
+        justifyContent: 'center',
+        alignItems: 'center',
+    },
+    vsWhat: {
+        height:218,
+        width: 205,
+        backgroundColor: '#3e3e45',
+    },
+    insideText: {
+        color: 'white',
+        font: 5,
+        margin: 5,
+        textAlign: 'center'
+    },
+});
